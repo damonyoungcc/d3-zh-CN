@@ -24,10 +24,10 @@ hero:
   actions:
     - theme: brand
       text: Get started
-      link: /getting-started
+      link: /en-US/getting-started
     - theme: alt
       text: What is D3?
-      link: /what-is-d3
+      link: /en-US/what-is-d3
     - theme: alt
       text: Examples
       link: https://observablehq.com/@d3/gallery?utm_source=d3js-org&utm_medium=hero&utm_campaign=try-observable
@@ -35,25 +35,25 @@ hero:
 features:
   - title: Selections and transitions
     details: Create, update, and animate the DOM based on data without the overhead of a virtual DOM.
-    link: /d3-selection
+    link: /en-US/d3-selection
   - title: Scales and axes
     details: Encode abstract data into visual values such as position, size, and color. Explain position encodings with axes.
-    link: /d3-scale
+    link: /en-US/d3-scale
   - title: Shapes
     details: Render arcs, areas, curves, lines, links, pies, stacks, symbols… and any geometric primitive you might need to visualize data.
-    link: /d3-shape
+    link: /en-US/d3-shape
   - title: Interactions
     details: Facilitate exploration with reusable interactive behaviors, including panning, zooming, brushing, and dragging.
-    link: /d3-brush
+    link: /en-US/d3-brush
   - title: Layouts
     details: Treemaps, trees, force-directed graphs, Voronoi, contours, chords, circle-packing… a library of layout algorithms at the ready.
-    link: /d3-hierarchy
+    link: /en-US/d3-hierarchy
   - title: Geographic maps
     details: More spherical projections than you can shake a stick at, with arbitrary aspects, adaptive sampling, and flexible clipping.
-    link: /d3-geo
+    link: /en-US/d3-geo
   - title: … and much more!
     details: CSV parsing, localized date parsing and formatting, color spaces, calendar math, statistics, and can I stop listing features now?
-    link: /d3-array
+    link: /en-US/d3-array
   - title: Powering Observable Plot
     details: The D3 team also builds Observable Plot, a high-level API for quick charts built on top of D3.
     link: https://observablehq.com/plot?utm_source=d3js-org&utm_medium=features&utm_campaign=try-observable

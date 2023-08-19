@@ -24,10 +24,10 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /zh-CN/getting-started
+      link: /getting-started
     - theme: alt
       text: D3是什么?
-      link: /zh-CN/what-is-d3
+      link: /what-is-d3
     - theme: alt
       text: 示例集
       link: https://observablehq.com/@d3/gallery?utm_source=d3js-org&utm_medium=hero&utm_campaign=try-observable
