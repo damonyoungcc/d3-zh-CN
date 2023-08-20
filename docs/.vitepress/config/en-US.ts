@@ -8,7 +8,7 @@ export default defineConfig({
   description: "The JavaScript library for bespoke data visualization",
   cleanUrls: true,
   sitemap: {
-    hostname: "https://d3js.org"
+    hostname: "https://d3js.org",
   },
   head: [
     ["link", { rel: "apple-touch-icon", href: "/logo.png" }],
@@ -16,20 +16,12 @@ export default defineConfig({
   ],
   markdown: {
     externalLinks: {
-      rel: "external"
-    }
+      rel: "external",
+    },
   },
   vite: {
     resolve: {
-      alias: [
-        { find: "d3", replacement: path.resolve("./dist/d3.mjs") },
-        {
-          find: /^.*\/VPFooter\.vue$/,
-          replacement: fileURLToPath(
-            new URL("./theme/CustomFooter.vue", import.meta.url)
-          ),
-        },
-      ],
+      alias: [{ find: "d3", replacement: path.resolve("./dist/d3.mjs") }],
     },
   },
   themeConfig: {
@@ -41,13 +33,13 @@ export default defineConfig({
       {
         text: "Examples",
         link: "https://observablehq.com/@d3/gallery?utm_source=d3js-org&utm_medium=nav&utm_campaign=try-observable",
-        rel: "external"
+        rel: "external",
       },
       { text: "Community", link: "/en-US/community" },
       {
         text: "Plot",
         link: "https://observablehq.com/plot?utm_source=d3js-org&utm_medium=nav&utm_campaign=try-observable",
-        rel: "external"
+        rel: "external",
       },
     ],
     sidebar: [
@@ -77,13 +69,22 @@ export default defineConfig({
             link: "/en-US/d3-interpolate",
             collapsed: true,
             items: [
-              { text: "Value interpolation", link: "/en-US/d3-interpolate/value" },
-              { text: "Color interpolation", link: "/en-US/d3-interpolate/color" },
+              {
+                text: "Value interpolation",
+                link: "/en-US/d3-interpolate/value",
+              },
+              {
+                text: "Color interpolation",
+                link: "/en-US/d3-interpolate/color",
+              },
               {
                 text: "Transform interpolation",
                 link: "/en-US/d3-interpolate/transform",
               },
-              { text: "Zoom interpolation", link: "/en-US/d3-interpolate/zoom" },
+              {
+                text: "Zoom interpolation",
+                link: "/en-US/d3-interpolate/zoom",
+              },
             ],
           },
           {
@@ -131,7 +132,10 @@ export default defineConfig({
                 link: "/en-US/d3-geo/projection",
                 collapsed: true,
                 items: [
-                  { text: "Azimuthal projections", link: "/en-US/d3-geo/azimuthal" },
+                  {
+                    text: "Azimuthal projections",
+                    link: "/en-US/d3-geo/azimuthal",
+                  },
                   { text: "Conic projections", link: "/en-US/d3-geo/conic" },
                   {
                     text: "Cylindrical projections",
@@ -209,11 +213,20 @@ export default defineConfig({
             link: "/en-US/d3-selection",
             collapsed: true,
             items: [
-              { text: "Selecting elements", link: "/en-US/d3-selection/selecting" },
-              { text: "Modifying elements", link: "/en-US/d3-selection/modifying" },
+              {
+                text: "Selecting elements",
+                link: "/en-US/d3-selection/selecting",
+              },
+              {
+                text: "Modifying elements",
+                link: "/en-US/d3-selection/modifying",
+              },
               { text: "Joining data", link: "/en-US/d3-selection/joining" },
               { text: "Handling events", link: "/en-US/d3-selection/events" },
-              { text: "Control flow", link: "/en-US/d3-selection/control-flow" },
+              {
+                text: "Control flow",
+                link: "/en-US/d3-selection/control-flow",
+              },
               { text: "Local variables", link: "/en-US/d3-selection/locals" },
               { text: "Namespaces", link: "/en-US/d3-selection/namespaces" },
             ],
@@ -248,10 +261,19 @@ export default defineConfig({
             link: "/en-US/d3-transition",
             collapsed: true,
             items: [
-              { text: "Selecting elements", link: "/en-US/d3-transition/selecting" },
-              { text: "Modifying elements", link: "/en-US/d3-transition/modifying" },
+              {
+                text: "Selecting elements",
+                link: "/en-US/d3-transition/selecting",
+              },
+              {
+                text: "Modifying elements",
+                link: "/en-US/d3-transition/modifying",
+              },
               { text: "Timing", link: "/en-US/d3-transition/timing" },
-              { text: "Control flow", link: "/en-US/d3-transition/control-flow" },
+              {
+                text: "Control flow",
+                link: "/en-US/d3-transition/control-flow",
+              },
             ],
           },
         ],
@@ -310,10 +332,5 @@ export default defineConfig({
       { icon: "linkedin", link: "https://www.linkedin.com/company/observable" },
       { icon: "youtube", link: "https://www.youtube.com/c/Observablehq" },
     ],
-    footer: {
-      message:
-        "Library released under <a style='text-decoration:underline;' href='https://github.com/d3/d3/blob/main/LICENSE'>ISC License</a>.",
-      copyright: `Copyright 2010–${new Date().getUTCFullYear()} Mike Bostock`,
-    },
   },
 });

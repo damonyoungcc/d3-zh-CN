@@ -3,6 +3,7 @@
 import DefaultTheme from "vitepress/theme-without-fonts";
 import ExamplesGrid from "./ExamplesGrid.vue";
 import ObservablePromo from "./ObservablePromo.vue";
+import CustomFooter from "./CustomFooter.vue";
 
 const {Layout} = DefaultTheme;
 
@@ -22,6 +23,9 @@ const {Layout} = DefaultTheme;
     </template>
     <template #home-features-after>
       <ObservablePromo />
+    </template>
+    <template #layout-bottom>
+      <CustomFooter />
     </template>
   </Layout>
 </template>

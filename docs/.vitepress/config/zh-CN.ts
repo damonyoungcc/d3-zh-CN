@@ -8,7 +8,7 @@ export default defineConfig({
   description: "可实现定制数据可视化的JavaScript库",
   cleanUrls: true,
   sitemap: {
-    hostname: "https://d3js.org"
+    hostname: "https://d3js.org",
   },
   head: [
     ["link", { rel: "apple-touch-icon", href: "/logo.png" }],
@@ -16,21 +16,13 @@ export default defineConfig({
   ],
   markdown: {
     externalLinks: {
-      rel: "external"
-    }
+      rel: "external",
+    },
   },
   vite: {
     resolve: {
-      alias: [
-        { find: "d3", replacement: path.resolve("./dist/d3.mjs") },
-        {
-          find: /^.*\/VPFooter\.vue$/,
-          replacement: fileURLToPath(
-            new URL("./theme/CustomFooter.vue", import.meta.url)
-          ),
-        },
-      ],
-    }
+      alias: [{ find: "d3", replacement: path.resolve("./dist/d3.mjs") }],
+    },
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -42,13 +34,13 @@ export default defineConfig({
       {
         text: "示例",
         link: "https://observablehq.com/@d3/gallery?utm_source=d3js-org&utm_medium=nav&utm_campaign=try-observable",
-        rel: "external"
+        rel: "external",
       },
       { text: "社区", link: "/community" },
       {
         text: "Plot",
         link: "https://observablehq.com/plot?utm_source=d3js-org&utm_medium=nav&utm_campaign=try-observable",
-        rel: "external"
+        rel: "external",
       },
     ],
     sidebar: [
@@ -341,10 +333,5 @@ export default defineConfig({
       { icon: "linkedin", link: "https://www.linkedin.com/company/observable" },
       { icon: "youtube", link: "https://www.youtube.com/c/Observablehq" },
     ],
-    footer: {
-      message:
-        "Library released under <a style='text-decoration:underline;' href='https://github.com/d3/d3/blob/main/LICENSE'>ISC License</a>.",
-      copyright: `Copyright 2010–${new Date().getUTCFullYear()} Mike Bostock`,
-    },
   },
 });
