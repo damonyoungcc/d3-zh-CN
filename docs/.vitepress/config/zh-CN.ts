@@ -56,7 +56,7 @@ export default defineConfig({
         items: [
           { text: "坐标轴 d3-axis", link: "/d3-axis" },
           {
-            text: "d3-chord",
+            text: "弦 d3-chord",
             link: "/d3-chord",
             collapsed: true,
             items: [
