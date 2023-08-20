@@ -8,15 +8,15 @@ import ExampleBlankChart from "./components/ExampleBlankChart.vue";
 
 D3 可以在任何 JavaScript 环境中运行。
 
-## Try D3 online
+## 在线尝试 D3
 
-The fastest way to get started (and get help) with D3 is on [Observable](https://observablehq.com)! D3 is available by default in notebooks as part of Observable’s standard library. To create something with D3, return the generated DOM element from a cell. Here is a blank chart to get you started:
+在 [Observable](https://observablehq.com) 上开始并获取关于 D3 的帮助是最快速的方式！D3 在 Observable 的笔记本中作为标准库的一部分默认可用。要使用 D3 创建某个内容，只需从单元格返回生成的 DOM 元素。以下是一个空白图表，帮助你入门：
 
 <ExampleBlankChart />
 
 ```js
 {
-  // Declare the chart dimensions and margins.
+  // 声明图表的尺寸和边距。
   const width = 640;
   const height = 400;
   const marginTop = 20;
@@ -24,53 +24,53 @@ The fastest way to get started (and get help) with D3 is on [Observable](https:/
   const marginBottom = 30;
   const marginLeft = 40;
 
-  // Declare the x (horizontal position) scale.
+  // 声明 x 轴（水平位置）比例尺。
   const x = d3.scaleUtc()
       .domain([new Date("2023-01-01"), new Date("2024-01-01")])
       .range([marginLeft, width - marginRight]);
 
-  // Declare the y (vertical position) scale.
+  // 声明 y 轴（垂直位置）比例尺。
   const y = d3.scaleLinear()
       .domain([0, 100])
       .range([height - marginBottom, marginTop]);
 
-  // Create the SVG container.
+  // 创建 SVG 容器。
   const svg = d3.create("svg")
       .attr("width", width)
       .attr("height", height);
 
-  // Add the x-axis.
+  // 添加 x 轴。
   svg.append("g")
       .attr("transform", `translate(0,${height - marginBottom})`)
       .call(d3.axisBottom(x));
 
-  // Add the y-axis.
+  // 添加 y 轴。
   svg.append("g")
       .attr("transform", `translate(${marginLeft},0)`)
       .call(d3.axisLeft(y));
 
-  // Return the SVG element.
+  // 返回 SVG 元素。
   return svg.node();
 }
 ```
 
-As a more complete example, try one of these starter templates:
+作为更完整的示例，您可以尝试以下其中一个起始模板：
 
-* [Area chart](https://observablehq.com/@d3/area-chart/2?intent=fork)
-* [Bar chart](https://observablehq.com/@d3/bar-chart/2?intent=fork)
-* [Donut chart](https://observablehq.com/@d3/donut-chart/2?intent=fork)
-* [Histogram](https://observablehq.com/@d3/histogram/2?intent=fork)
-* [Line chart](https://observablehq.com/@d3/line-chart/2?intent=fork)
+* [区域图 Area chart](https://observablehq.com/@d3/area-chart/2?intent=fork)
+* [条形图 Bar chart](https://observablehq.com/@d3/bar-chart/2?intent=fork)
+* [环形图 Donut chart](https://observablehq.com/@d3/donut-chart/2?intent=fork)
+* [直方图 Histogram](https://observablehq.com/@d3/histogram/2?intent=fork)
+* [折线图 Line chart](https://observablehq.com/@d3/line-chart/2?intent=fork)
 
-See the [D3 gallery](https://observablehq.com/@d3/gallery) for more forkable examples.
+您还可以在 [D3 gallery](https://observablehq.com/@d3/gallery) 图库中查看更多可 fork 的示例。
 
-Observable includes a few D3 snippets when you click **+** to add a cell (type “d3” when the cell menu is open to filter), as well as convenient [sample datasets](https://observablehq.com/@observablehq/sample-datasets) to try out D3 features. Or upload a CSV or JSON file to start playing with your data. You can also fork any of the [hundreds of notebooks](https://observablehq.com/@d3?tab=notebooks) we’ve published for a head start.
+在 Observable 中，当您点击 **+** 来添加一个单元格时，会包含一些 D3 片段（在单元格菜单打开时键入“d3”以进行过滤），以及方便的 [示例数据集 sample datasets](https://observablehq.com/@observablehq/sample-datasets) ，可以尝试D3的功能。或者上传 CSV 或 JSON 文件开始处理您的数据。您还可以 fork 我们已发布的 [数百个笔记本  hundreds of notebooks](https://observablehq.com/@d3?tab=notebooks) 中的任何一个，以获取一个启动点。
 
-Observable is free for public use. Sign up for a [Pro account](https://observablehq.com/pricing) to connect to private databases, collaborate on private notebooks, and more.
+Observable对于公开使用是免费的。注册 [Pro 账户](https://observablehq.com/pricing) 以连接到私有数据库、在私有笔记本上进行协作等。
 
-## D3 in vanilla HTML
+## 在 HTML 中使用 D3
 
-In vanilla HTML, you can load D3 from a CDN such as jsDelivr or you can download it locally. We recommend using the CDN-hosted ES module bundle. But for those who need it, we also provide a UMD bundle that exports the `d3` global when loaded as a plain script.
+在 HTML 中，您可以从诸如 jsDelivr 之类的 CDN 加载 D3，也可以进行本地下载。我们推荐使用 CDN 托管的 ES 模块捆绑包。但对于那些需要的人，我们还提供了一个 UMD 捆绑包，在加载为纯脚本时会导出 d3 全局对象。
 
 :::code-group
 ```html [ESM + CDN]
@@ -80,7 +80,7 @@ In vanilla HTML, you can load D3 from a CDN such as jsDelivr or you can download
 
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
-// Declare the chart dimensions and margins.
+// 声明图表的尺寸和边距。
 const width = 640;
 const height = 400;
 const marginTop = 20;
@@ -88,32 +88,32 @@ const marginRight = 20;
 const marginBottom = 30;
 const marginLeft = 40;
 
-// Declare the x (horizontal position) scale.
+// 声明 x（水平位置）比例尺。
 const x = d3.scaleUtc()
     .domain([new Date("2023-01-01"), new Date("2024-01-01")])
     .range([marginLeft, width - marginRight]);
 
-// Declare the y (vertical position) scale.
+// 声明 y（垂直位置）比例尺。
 const y = d3.scaleLinear()
     .domain([0, 100])
     .range([height - marginBottom, marginTop]);
 
-// Create the SVG container.
+// 创建 SVG 容器。
 const svg = d3.create("svg")
     .attr("width", width)
     .attr("height", height);
 
-// Add the x-axis.
+// 添加 x 轴。
 svg.append("g")
     .attr("transform", `translate(0,${height - marginBottom})`)
     .call(d3.axisBottom(x));
 
-// Add the y-axis.
+// 添加 y 轴。
 svg.append("g")
     .attr("transform", `translate(${marginLeft},0)`)
     .call(d3.axisLeft(y));
 
-// Append the SVG element.
+// 添加 SVG 元素。
 container.append(svg.node());
 
 </script>
@@ -125,7 +125,7 @@ container.append(svg.node());
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <script type="module">
 
-// Declare the chart dimensions and margins.
+// 声明图表的尺寸和边距。
 const width = 640;
 const height = 400;
 const marginTop = 20;
@@ -133,32 +133,32 @@ const marginRight = 20;
 const marginBottom = 30;
 const marginLeft = 40;
 
-// Declare the x (horizontal position) scale.
+// 声明 x（水平位置）比例尺。
 const x = d3.scaleUtc()
     .domain([new Date("2023-01-01"), new Date("2024-01-01")])
     .range([marginLeft, width - marginRight]);
 
-// Declare the y (vertical position) scale.
+// 声明 y（垂直位置）比例尺。
 const y = d3.scaleLinear()
     .domain([0, 100])
     .range([height - marginBottom, marginTop]);
 
-// Create the SVG container.
+// 创建 SVG 容器。
 const svg = d3.create("svg")
     .attr("width", width)
     .attr("height", height);
 
-// Add the x-axis.
+// 添加 x 轴。
 svg.append("g")
     .attr("transform", `translate(0,${height - marginBottom})`)
     .call(d3.axisBottom(x));
 
-// Add the y-axis.
+// 添加 y 轴。
 svg.append("g")
     .attr("transform", `translate(${marginLeft},0)`)
     .call(d3.axisLeft(y));
 
-// Append the SVG element.
+// 添加 SVG 元素。
 container.append(svg.node());
 
 </script>
@@ -170,7 +170,7 @@ container.append(svg.node());
 <script src="d3.js"></script>
 <script type="module">
 
-// Declare the chart dimensions and margins.
+// 声明图表的尺寸和边距。
 const width = 640;
 const height = 400;
 const marginTop = 20;
@@ -178,48 +178,48 @@ const marginRight = 20;
 const marginBottom = 30;
 const marginLeft = 40;
 
-// Declare the x (horizontal position) scale.
+// 声明 x（水平位置）比例尺。
 const x = d3.scaleUtc()
     .domain([new Date("2023-01-01"), new Date("2024-01-01")])
     .range([marginLeft, width - marginRight]);
 
-// Declare the y (vertical position) scale.
+// 声明 y（垂直位置）比例尺。
 const y = d3.scaleLinear()
     .domain([0, 100])
     .range([height - marginBottom, marginTop]);
 
-// Create the SVG container.
+// 创建 SVG 容器。
 const svg = d3.create("svg")
     .attr("width", width)
     .attr("height", height);
 
-// Add the x-axis.
+// 添加 x 轴。
 svg.append("g")
     .attr("transform", `translate(0,${height - marginBottom})`)
     .call(d3.axisBottom(x));
 
-// Add the y-axis.
+// 添加 y 轴。
 svg.append("g")
     .attr("transform", `translate(${marginLeft},0)`)
     .call(d3.axisLeft(y));
 
-// Append the SVG element.
+// 添加 SVG 元素。
 container.append(svg.node());
 
 </script>
 ```
 :::
 
-If you’d prefer to run D3 locally (or offline), you can download the UMD bundles of D3 here:
+如果你更喜欢在本地（或离线）运行 D3，你可以在这里下载 D3 的 UMD 包：
 
 - <a href="./d3.v7.js" download>d3.v7.js</a>
 - <a href="./d3.v7.min.js" download>d3.v7.min.js</a>
 
-Then, create an `index.html` file as shown above in the **UMD + local** tab. Use the non-minified bundle for debugging, and the minified bundle for faster performance in production.
+然后，像在上面的 **UMD + 本地** 标签中所示，创建一个 `index.html` 文件。在调试时使用非压缩的包，而在生产环境中使用压缩的包以获得更快的性能。
 
-## Installing from npm
+## 从 npm 安装
 
-If you’re developing a web application using Node, you can install D3 via yarn, npm, pnpm, or your preferred package manager.
+如果你正在使用 Node 开发 web 应用程序，你可以通过 yarn、npm、pnpm 或其他你喜欢的包管理器来安装 D3。
 
 :::code-group
 
@@ -237,29 +237,29 @@ pnpm add d3
 
 :::
 
-You can then load D3 into your app as:
+然后你可以在你的应用程序中加载 D3，如下所示：
 
 ```js
 import * as d3 from "d3";
 ```
 
-You can instead import specific symbols if you prefer:
+如果你愿意，你也可以导入特定的符号：
 
 ```js
 import {select, selectAll} from "d3";
 ```
 
-Alternatively you can install and import from D3 submodules:
+或者你可以安装并从 D3 的子模块中导入：
 
 ```js
 import {mean, median} from "d3-array";
 ```
 
-TypeScript declarations are available via DefinitelyTyped.
+TypeScript 声明可以通过 DefinitelyTyped 获取。
 
 ## D3 in React
 
-Most D3 modules (including [d3-scale](./d3-scale.md), [d3-array](./d3-array.md), [d3-interpolate](./d3-interpolate.md), and [d3-format](./d3-format.md)) don’t interact with the DOM, so there is no difference when using them in React. You can use them in JSX for purely declarative visualization, such as the line plot below.
+大多数 D3 模块（包括 [d3-scale](./d3-scale.md)、[d3-array](./d3-array.md)、[d3-interpolate](./d3-interpolate.md) 和 [d3-format](./d3-format.md)）不与 DOM 交互，因此在 React 中使用它们时没有任何区别。您可以在 JSX 中使用它们进行纯声明式的可视化，例如下面的线图。
 
 :::code-group
 ```jsx [LinePlot.jsx]
@@ -291,7 +291,7 @@ export default function LinePlot({
 
 <p style="margin-top: -1em;"><a href="https://codesandbox.io/s/d3-react-ssr-5g1bm0?file=/src/LinePlot.jsx" style="font-size: smaller;" target="_blank">Sandbox ↗︎</a></p>
 
-D3 modules that operate on [selections](./d3-selection/selecting.md) (including [d3-selection](./d3-selection.md), [d3-transition](./d3-transition.md), and [d3-axis](./d3-axis.md)) do manipulate the DOM, which competes with React’s virtual DOM. In those cases, you can attach a ref to an element and pass it to D3 in a useEffect hook.
+D3模块中对 [选择集 selections](./d3-selection/selecting.md) 进行操作的部分（包括 [d3-selection](./d3-selection.md)、 [d3-transition](./d3-transition.md) 和 [d3-axis](./d3-axis.md)）会操作 DOM，这与 React 的虚拟 DOM 发生冲突。在这些情况下，您可以将 ref 附加到元素并在 useEffect 钩子中将其传递给 D3。
 
 :::code-group
 ```jsx [LinePlot.jsx]
@@ -330,11 +330,11 @@ export default function LinePlot({
 
 <p style="margin-top: -1em;"><a href="https://codesandbox.io/s/d3-react-useeffect-5lp0x6?file=/src/LinePlot.jsx" style="font-size: smaller;" target="_blank">Sandbox ↗︎</a></p>
 
-For more guidance using D3 in React, see [Amelia Wattenberger’s post](https://2019.wattenberger.com/blog/react-and-d3).
+要了解在 React 中使用 D3 的更多指导，请查看 [Amelia Wattenberger’s post](https://2019.wattenberger.com/blog/react-and-d3) 的文章。
 
 ## D3 in Svelte
 
-As [with React](#d3-in-react), you can use Svelte exclusively for rendering if you like, and only use D3 modules that don’t manipulate the DOM. Here is a line plot of an array of numbers that uses [d3-shape](./d3-shape.md) and [d3-scale](./d3-scale-chromatic.md).
+与 [with React](#d3-in-react) 一样，您可以完全使用 Svelte 进行渲染，仅使用不操作 DOM 的 D3 模块。以下是一个使用 [d3-shape](./d3-shape.md) 和 [d3-scale](./d3-scale-chromatic.md) 的数字数组的折线图示例。
 
 :::code-group
 ```svelte [LinePlot.svelte]
@@ -366,7 +366,7 @@ As [with React](#d3-in-react), you can use Svelte exclusively for rendering if y
 
 <p style="margin-top: -1em;"><a href="https://svelte.dev/repl/ece91c0d8b204d5ea970dbbc0d6783aa?version=3.59.1" style="font-size: smaller;" target="_blank">REPL ↗︎</a></p>
 
-Svelte’s reactive statements (`$:`) pair nicely with D3 [data joins](./d3-selection/joining.md) for efficient updates. Below, we use them to render dynamic axes as the data changes.
+Svelte 的响应式语句 (`$:`) 与 D3 的 [数据绑定 data joins](./d3-selection/joining.md) 很好地配合，可以实现高效的更新。在下面的示例中，我们使用它们来在数据变化时渲染动态的坐标轴。
 
 :::code-group
 ```svelte [LinePlot.svelte]
