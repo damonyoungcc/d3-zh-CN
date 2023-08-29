@@ -1,10 +1,10 @@
 # Ribbons
 
-A ribbon visually represents the volume of flow between two nodes in a [chord diagram](../d3-chord.md). Ribbons come in two varieties: [ribbon](#ribbon) represents a bidirectional flow, while [ribbonArrow](#ribbonArrow) represents a unidirectional flow. The latter is suitable for [chordDirected](./chord.md#chordDirected).
+ribbon 在 [弦图 chord diagram](../d3-chord.md) 中用于可视化两个节点之间的流量大小，Ribbons 有两种类型：[ribbon](#ribbon) 表示双向流动，而 [ribbonArrow](#ribbonArrow) 表示单向流动，后者适用于 [chordDirected 有向弦图](./chord.md#chordDirected) 的情况
 
 ## ribbon() {#ribbon}
 
-[Source](https://github.com/d3/d3-chord/blob/main/src/ribbon.js) · Creates a new ribbon generator with the default settings.
+[源码](https://github.com/d3/d3-chord/blob/main/src/ribbon.js) · 使用默认设置创建一个新的 ribbon 生成器。
 
 ```js
 const ribbon = d3.ribbon();
@@ -12,7 +12,7 @@ const ribbon = d3.ribbon();
 
 ## *ribbon*(...*arguments*) {#_ribbon}
 
-[Source](https://github.com/d3/d3-chord/blob/main/src/ribbon.js) · Generates a ribbon for the given *arguments*. The *arguments* are arbitrary; they are propagated to the ribbon generator’s accessor functions along with the `this` object. For example, with the default settings, a [chord object](./chord.md) is expected:
+[源码](https://github.com/d3/d3-chord/blob/main/src/ribbon.js) · 根据给定的 *参数* 生成一个 ribbon。这些 *参数* 是任意的；它们将与this对象一起传递给 ribbon 生成器的访问函数。例如，使用默认设置，预期会有一个和弦对象 [chord object](./chord.md)：
 
 ```js
 ribbon({
@@ -21,7 +21,7 @@ ribbon({
 }) // "M164.0162810494058,-175.21032946354026A240,240,0,0,1,216.1595644740915,-104.28347273835429Q0,0,229.9158815306728,68.8381247563705A240,240,0,0,1,219.77316791012538,96.43523560788266Q0,0,164.0162810494058,-175.21032946354026Z"
 ```
 
-If the ribbon generator has a [context](#ribbon_context), then the ribbon is rendered to this context as a sequence of path method calls and this function returns void. Otherwise, a path data string is returned.
+如果 ribbon 生成器具有上下文 [context](#ribbon_context)，则 ribbon 将作为一系列路径方法调用呈现到该上下文中，并且该函数返回void（无返回值）。否则，将返回一个路径数据字符串。
 
 ## *ribbon*.source(*source*) {#ribbon_source}
 
